@@ -1,0 +1,10 @@
+.main__container {
+    padding: 31px 0;
+}
+.main__results {
+    margin-bottom: 42px;
+    display: grid;
+    grid-template-columns: repeat(4, 263px);
+    grid-auto-rows: max-content;
+    gap: 28px;
+}

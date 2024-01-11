@@ -1,0 +1,9 @@
+<div class="pagination">
+    <button class="pagination__btn pagination__btn--prev" (click)="onPrev()" [disabled]="isDisabled  || currentPage === 1">
+        <mat-icon>keyboard_arrow_left</mat-icon>
+    </button>
+    <span class="pagination__current-page-num">{{currentPage}}</span>
+    <button class="pagination__btn pagination__btn--next" (click)="onNext()" [disabled]="isDisabled">
+        <mat-icon>keyboard_arrow_right</mat-icon>
+    </button>
+</div>

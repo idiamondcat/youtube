@@ -1,0 +1,14 @@
+@use "../../../../assets/styles/colors" as colors;
+
+.btn {
+    padding: 0;
+    background-color: colors.$primary-color;
+    border: none;
+    border-radius: 6px;
+    font: inherit;
+    color: colors.$white;
+    box-shadow: 2px 0px 4px 0px #2F80ED;
+    &:hover {
+        cursor: pointer;
+    }
+}

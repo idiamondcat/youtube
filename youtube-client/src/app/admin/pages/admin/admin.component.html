@@ -1,0 +1,91 @@
+<div class="container">
+    <section class="form admin">
+        <h1 class="form__title">Create new card</h1>
+        <form class="form__group" [formGroup]="adminForm">
+            <div class="form__field-wrapper">
+                <label class="form__label" for="title">Title</label>
+                <div class="form__field">
+                    <input class="form__input" id="title" type="text" appValidationIndicator formControlName="title">
+                    <ng-container *ngIf="(getTitle?.dirty || getTitle?.touched) && getTitle?.invalid">
+                        <div class="form__error" *ngIf="getTitle?.errors?.['required']">
+                            Please enter a title
+                        </div>
+                        <div class="form__error" *ngIf="getTitle?.errors?.['minlength']">
+                            The title is too short
+                        </div>
+                        <div class="form__error" *ngIf="getTitle?.errors?.['maxlength']">
+                            The title is too long
+                        </div>
+                    </ng-container>
+                </div>
+            </div>
+            <div class="form__field-wrapper">
+                <label class="form__label" for="description">Description</label>
+                <div class="form__field">
+                    <input class="form__input" id="description" type="text" appValidationIndicator formControlName="description">
+                    <div class="form__error" *ngIf="(getDescription?.dirty || getDescription?.touched) && getDescription?.invalid && getDescription?.errors?.['maxlength']">
+                        The description is too long
+                    </div>
+                </div>
+            </div>
+            <div class="form__field-wrapper">
+                <label class="form__label" for="img">Img</label>
+                <div class="form__field">
+                    <input class="form__input" id="img" type="text" appValidationIndicator formControlName="img">
+                    <div class="form__error" *ngIf="(getImg?.dirty || getImg?.touched) && getImg?.invalid && getImg?.errors?.['required']">
+                        Please enter a link to the image
+                    </div>
+                </div>
+            </div>
+            <div class="form__field-wrapper">
+                <label class="form__label" for="link">Link video</label>
+                <div class="form__field">
+                    <input class="form__input" id="link" type="text" appValidationIndicator formControlName="link">
+                    <div class="form__error" *ngIf="(getLink?.dirty || getLink?.touched) && getLink?.invalid && getLink?.errors?.['required']">
+                        Please enter a link to the video
+                    </div>
+                </div>
+            </div>
+            <div class="form__field-wrapper">
+                <label class="form__label" for="date">Date</label>
+                <div class="form__field">
+                    <input class="form__input" id="date" type="date" appValidationIndicator formControlName="date">
+                    <ng-container *ngIf="(getDate?.dirty || getDate?.touched) && getDate?.invalid">
+                        <div class="form__error" *ngIf="getDate?.errors?.['required']">
+                            Please enter a creation date
+                        </div>
+                        <div class="form__error" *ngIf="getDate?.errors?.errorStr">
+                            {{getDate?.errors?.errorStr.message}}
+                        </div>
+                    </ng-container>
+                </div>
+            </div>
+            <div class="form__tags-header-wrapper">
+                <span class="form__label">Tags</span>
+                <div class="form__btns-wrapper">
+                    <button class="form__extra-btn" (click)="addTag()">
+                        <mat-icon>add</mat-icon>
+                        Add tag
+                    </button>
+                    <button class="form__extra-btn" (click)="resetTags()">
+                        <mat-icon>delete_outline</mat-icon>
+                        Reset tags
+                    </button>
+                </div>
+            </div>
+            <ng-container formArrayName="tags">
+                <ng-container *ngFor="let tagForm of tags.controls; let i = index">
+                    <div class="form__sub-form" [formGroupName]="i">
+                        <input class="form__input form__input--sub" id="tag" type="text" appValidationIndicator formControlName="tag">
+                        <div class="form__error" *ngIf="(tags.controls[i].dirty || tags.controls[i].touched) && tags.controls[i].invalid">
+                            Please enter a tag
+                        </div>
+                    </div>
+                </ng-container>
+            </ng-container>
+            <div class="form__extra-wrapper">
+                <button class="form__btn" [disabled]="!adminForm.valid" (click)="createCard()">Create card</button>
+            </div>
+        </form>
+    </section>
+</div>

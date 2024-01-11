@@ -1,0 +1,50 @@
+<header class="header">
+    <div class="container header__container">
+        <div class="header__wrapper">
+            <a routerLink="/">
+                <div class="header__logo-wrapper">
+                    <img src="assets/img/logo.png" alt="Youtube Logo" class="logo">
+                </div>
+            </a>
+            <app-search></app-search>
+            <app-custom-button (click)="showSettingsFn()">
+                <div class="header__btn-icon-wrapper">
+                    <svg class="header__btn-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path id="Vector" d="M9.5613 13.1136C9.78485 12.5128 10.2933 12.0909 10.8846 12.0909C11.476 12.0909 11.9844 12.5128 12.2079 13.1136H14.9231C15.2404 13.1136 15.5 13.4205 15.5 13.7955C15.5 14.1705 15.2404 14.4773 14.9231 14.4773H12.2079C11.9844 15.0781 11.476 15.5 10.8846 15.5C10.2933 15.5 9.78485 15.0781 9.5613 14.4773H1.07692C0.759615 14.4773 0.5 14.1705 0.5 13.7955C0.5 13.4205 0.759615 13.1136 1.07692 13.1136H9.5613ZM3.79207 7.31818C4.01563 6.71733 4.52404 6.29545 5.11538 6.29545C5.70673 6.29545 6.21514 6.71733 6.4387 7.31818H14.9231C15.2404 7.31818 15.5 7.625 15.5 8C15.5 8.375 15.2404 8.68182 14.9231 8.68182H6.4387C6.21514 9.28267 5.70673 9.70455 5.11538 9.70455C4.52404 9.70455 4.01563 9.28267 3.79207 8.68182H1.07692C0.759615 8.68182 0.5 8.375 0.5 8C0.5 7.625 0.759615 7.31818 1.07692 7.31818H3.79207ZM9.5613 1.52273C9.78485 0.921875 10.2933 0.5 10.8846 0.5C11.476 0.5 11.9844 0.921875 12.2079 1.52273H14.9231C15.2404 1.52273 15.5 1.82955 15.5 2.20455C15.5 2.57955 15.2404 2.88636 14.9231 2.88636H12.2079C11.9844 3.48722 11.476 3.90909 10.8846 3.90909C10.2933 3.90909 9.78485 3.48722 9.5613 2.88636H1.07692C0.759615 2.88636 0.5 2.57955 0.5 2.20455C0.5 1.82955 0.759615 1.52273 1.07692 1.52273H9.5613Z" fill="white"/>
+                    </svg>
+                </div>
+            </app-custom-button>
+            <a class="header__favorite-link" routerLink="favorites">
+                <mat-icon class="header__favorite-icon">favorite</mat-icon>
+            </a>
+        </div>
+        <div class="header__user-block">
+            <a routerLink="admin" class="header__profile-link">
+                <div class="header__login-block">
+                    <span class="header__login-name">Your name</span>
+                    <svg class="header__login-icon" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g id="login" filter="url(#filter0_d_27_14092)">
+                        <rect id="Rectangle 20" x="2" y="2" width="24" height="24" rx="5" fill="white"/>
+                        <path id="Subtract" fill-rule="evenodd" clip-rule="evenodd" d="M26 7C26 4.23858 23.7614 2 21 2H7C4.23858 2 2 4.23858 2 7V21C2 23.7614 4.23858 26 7 26H21C23.7614 26 26 23.7614 26 21V7ZM4.39993 14C4.39993 8.72 8.71993 4.4 13.9999 4.4C19.2799 4.4 23.5999 8.72 23.5999 14C23.5999 19.28 19.2799 23.6 13.9999 23.6C8.71993 23.6 4.39993 19.28 4.39993 14ZM16.8799 10.16C16.8799 8.57692 15.583 7.28 13.9999 7.28C12.4169 7.28 11.1199 8.57692 11.1199 10.16C11.1199 11.7431 12.4169 13.04 13.9999 13.04C15.583 13.04 16.8799 11.7431 16.8799 10.16ZM8.99188 16.7033C8.20027 17.3868 8.52028 18.5762 9.28858 19.2858C10.5257 20.4285 12.1806 21.1446 13.9999 21.1446C15.8176 21.1446 17.4711 20.4272 18.7078 19.2871C19.4783 18.5769 19.7993 17.3852 19.0055 16.7012C17.7911 15.6546 15.3984 15.0938 13.9999 15.0938C12.6005 15.0938 10.2055 15.6553 8.99188 16.7033Z" fill="#2F80ED"/>
+                        </g>
+                        <defs>
+                        <filter id="filter0_d_27_14092" x="0" y="0" width="32" height="32" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                        <feOffset dx="2" dy="2"/>
+                        <feGaussianBlur stdDeviation="2"/>
+                        <feColorMatrix type="matrix" values="0 0 0 0 0.184314 0 0 0 0 0.501961 0 0 0 0 0.929412 0 0 0 0.25 0"/>
+                        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_27_14092"/>
+                        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_27_14092" result="shape"/>
+                        </filter>
+                        </defs>
+                    </svg>
+                </div>
+            </a>
+            <button *ngIf="auth.isLogin | async" class="header__logout" (click)="logout()">
+                <mat-icon>keyboard_arrow_left</mat-icon>
+                <span>Log Out</span>
+            </button>
+        </div>
+    </div>
+</header>

@@ -1,0 +1,20 @@
+@use "../../../../assets/styles/colors" as colors;
+
+.search {
+    & .search__field {
+        width: 396px;
+        padding: 5px;
+        background-color: colors.$lightest-grey;
+        border: none;
+        font: inherit;
+        &:active, &:focus {
+            outline: none;
+        }
+    }
+    & .search__btn-text {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 5px 24px;
+    }
+}

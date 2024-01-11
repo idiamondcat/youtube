@@ -1,0 +1,15 @@
+.error {
+    height: calc(100vh - 80px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    & .error__content {
+        display: flex;
+        align-items: center;
+        column-gap: 27px;
+    }
+    & .error__image-wrapper {
+        width: 100px;
+        height: 91px;
+    }
+}

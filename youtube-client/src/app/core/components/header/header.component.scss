@@ -1,0 +1,78 @@
+@use "../../../../assets/styles/colors" as colors;
+
+.header {
+    background-color: colors.$light-grey;
+    padding: 15px 0;
+    & .header__container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+    & .header__wrapper {
+        display: flex;
+        align-items: center;
+        column-gap: 10px;
+    }
+    & .header__logo-wrapper {
+        width: 50px;
+        height: 50px;
+    }
+    & .header__profile-link {
+        display: inline-flex;
+        text-decoration: none;
+        color: inherit;
+        cursor: pointer;
+    }
+    & .header__login-block, & .header__favorites-block {
+        display: flex;
+        align-items: center;
+        column-gap: 8px;
+    }
+    & .header__profile-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    & .header__btn-icon-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-sizing: content-box;
+        padding: 4px;
+    }
+    & .header__user-block {
+        display: flex;
+        position: absolute;
+        top: 13px;
+        right: 10px;
+    }
+    & .header__logout {
+        display: flex;
+        align-items: center;
+        column-gap: 3px;
+        font: inherit;
+        background-color: transparent;
+        border: none;
+    }
+    & .header__favorite-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 24px;
+        height: 24px;
+        padding: 4px;
+        background-color: colors.$primary-color;
+        border: none;
+        border-radius: 6px;
+        color: colors.$white;
+        box-shadow: 2px 0px 4px 0px #2F80ED;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+    & .header__favorite-icon {
+        font-size: 16px;
+        height: auto;
+    }
+}

@@ -1,0 +1,9 @@
+<app-settings *ngIf="!isShow()" (sortMethodEvt)="changeSort($event)" (findByKeywordEvt)="showByKeyword($event)"></app-settings>
+<div class="container main__container">
+    <section class="main__results">
+        <ng-container *ngIf="data | async as videos">
+            <app-card *ngFor="let item of videos | sortBy:sortMethod:isASC | keywords:keyword" [card]="item"></app-card>
+        </ng-container>
+    </section>
+    <app-paginator [tokens]="tokens | async" [isDisabled]="(data | async) ? false : true"></app-paginator>
+</div>

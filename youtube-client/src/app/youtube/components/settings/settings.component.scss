@@ -1,0 +1,36 @@
+@use "../../../../assets/styles/colors" as colors;
+@use "../../../../assets/styles/fonts" as fonts;
+
+.settings {
+    padding: 18px 0 18px 0;
+    background-color: colors.$light-grey;
+    & .settings__wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        column-gap: 11px;
+    }
+    & .settings__list {
+        display: flex;
+        align-items: center;
+        column-gap: 21px;
+    }
+    & .settings__btn-option {
+        padding: 0;
+        background-color: transparent;
+        border: none;
+        color: colors.$primary-color;
+        text-decoration: underline;
+        font: inherit;
+    }
+    & .settings__label {
+        color: colors.$primary-color;
+    }
+    & .settings__field {
+        width: 149px;
+        margin-left: 10px;
+        background-color: colors.$white;
+        border: none;
+        font: inherit;
+    }
+}

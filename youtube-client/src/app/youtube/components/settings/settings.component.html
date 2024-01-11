@@ -1,0 +1,18 @@
+<div class="settings">
+    <div class="container settings__wrapper">
+        <span>Sorting by:</span>
+        <ul class="settings__list">
+            <li class="settings__item">
+                <button class="settings__btn-option" (click)="sort('date')">date</button>
+            </li>
+            <li class="settings__item">
+                <button class="settings__btn-option" (click)="sort('views')">count of views</button>
+            </li>
+            <li class="settings__item">
+                <label class="settings__label" for="searchWord">by word or sentance
+                    <input type="text" class="settings__field" id="searchWord" #keywordField (keyup)="searchKeyword(keywordField.value)">
+                </label>
+            </li>
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,7 @@
+<div class="container">
+    <section class="favorite">
+        <div *ngIf="data | async as data" class="favorite__container">
+            <app-card *ngFor="let item of data" [card]="item"></app-card>
+        </div>
+    </section>
+</div>

@@ -1,0 +1,4 @@
+<div class="search">
+    <!-- new FormControl valueChanges-Observable-> подписка -> debounceTime, filter -> next SearchFn -->
+    <input type="text" class="search__field" placeholder="What are you want to find out?" (keyup)="search(searchField.value)" #searchField>
+</div>

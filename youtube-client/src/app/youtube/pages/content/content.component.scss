@@ -1,0 +1,103 @@
+@use "../../../../assets/styles/colors" as colors;
+
+.content {
+    display: flex;
+    margin-top: 45px;
+    max-height: 461px;
+    overflow: hidden;
+    & .content__back-link {
+        width: 32px;
+        height: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: colors.$white;
+        border-radius: 4px 0 0 4px;
+    }
+    & .content__image-block {
+        width: 729px;
+        border-radius: 0px 0px 0px 5px;
+        overflow: hidden;
+    }
+    & .content__description-block {
+        width: 436px;
+        padding: 35px 35px 24px 35px;
+        display: flex;
+        flex-direction: column;
+        row-gap: 35px;
+        background-color: colors.$light-grey;
+        border-radius: 0px 5px 5px 0px;
+        overflow: hidden;
+        position: relative;
+    }
+    & .content__description-header {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+    }
+    & .content__date {
+        white-space: nowrap;
+    }
+    & .content__description {
+        font: inherit;
+        white-space: pre-wrap;
+        overflow-y: auto;
+    }
+    & .content__stats {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        column-gap: 17px;
+        margin-top: auto;
+    }
+    & .content__stat {
+        position: relative;
+        &.content__stat--views {
+            padding-left: 23px;
+            &::before {
+                content: "";
+                width: 20px;
+                height: 13px;
+                position: absolute;
+                background-image: url("../../../../assets/icons/viewed.svg");
+                left: 0;
+                top: 0;
+            }
+        }
+        &.content__stat--likes {
+            padding-left: 18px;
+            &::before {
+                content: "";
+                width: 15px;
+                height: 13px;
+                position: absolute;
+                background-image: url("../../../../assets/icons/liked.svg");
+                left: 0;
+                top: 0;
+            }
+        }
+        &.content__stat--comments {
+            padding-left: 18px;
+            &::before {
+                content: "";
+                width: 13px;
+                height: 13px;
+                position: absolute;
+                background-image: url("../../../../assets/icons/Group\ 9.svg");
+                left: 0;
+                top: 0;
+            }
+        }
+    }
+    & .content__button-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: auto;
+    }
+    & .content__indicator {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+}

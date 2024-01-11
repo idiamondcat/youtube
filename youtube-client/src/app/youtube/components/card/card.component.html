@@ -1,0 +1,25 @@
+<div class="card">
+    <div class="card__info">
+        <div class="card__image-wrapper">
+            <img [src]="card.snippet.thumbnails.medium.url" [alt]="card.snippet.title">
+        </div>
+        <div class="card__stats" *ngIf="card.statistics">
+            <span class="card__stat card__stat--views">{{card.statistics.viewCount}}</span>
+            <span class="card__stat card__stat--likes">{{card.statistics.likeCount}}</span>
+            <span class="card__stat card__stat--comments">{{card.statistics.commentCount}}</span>
+        </div>
+        <h2 class="subtitle card__title">{{card.snippet.title}}</h2>
+    </div>
+    <button *ngIf="!card.isCustom" class="favorite-btn" (click)="addtofavorite()">
+        <mat-icon>favorite_outline</mat-icon>
+    </button>
+    <div class="card__button-wrapper">
+        <app-custom-button *ngIf="card.isCustom" (click)="removeVideo()">
+            <mat-icon>delete</mat-icon>
+        </app-custom-button>
+    </div>
+    <app-custom-button [routerLink]="['details/', card.id]">
+        <span class="card__btn-text">more...</span>
+    </app-custom-button>
+    <div class="indicator card__indicator" appBorder [date]="card.snippet.publishedAt"></div>
+</div>

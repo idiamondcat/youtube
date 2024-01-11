@@ -1,0 +1,90 @@
+@use "../../../../assets/styles/colors" as colors;
+
+.card {
+    width: 263px;
+    height: 327px;
+    padding: 20px 20px 15px 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: colors.$light-grey;
+    box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    overflow: hidden;
+    & .card__info {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        row-gap: 21px;
+    }
+    & .card__image-wrapper {
+        width: 100%;
+        height: 123px;
+        overflow: hidden;
+    }
+    & .card__title {
+        padding-left: 10px;
+        text-align: right;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+    & .card__btn-text {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 120px;
+        padding: 6.4px 31px;
+    }
+    & .card__stats {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    & .card__stat {
+        position: relative;
+        &.card__stat--views {
+            padding-left: 23px;
+            &::before {
+                content: "";
+                width: 20px;
+                height: 13px;
+                position: absolute;
+                background-image: url("../../../../assets/icons/viewed.svg");
+                left: 0;
+                top: 0;
+            }
+        }
+        &.card__stat--likes {
+            padding-left: 18px;
+            &::before {
+                content: "";
+                width: 15px;
+                height: 13px;
+                position: absolute;
+                background-image: url("../../../../assets/icons/liked.svg");
+                left: 0;
+                top: 0;
+            }
+        }
+        &.card__stat--comments {
+            padding-left: 18px;
+            &::before {
+                content: "";
+                width: 13px;
+                height: 13px;
+                position: absolute;
+                background-image: url("../../../../assets/icons/Group\ 9.svg");
+                left: 0;
+                top: 0;
+            }
+        }
+    }
+    & .card__indicator {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+}

@@ -1,0 +1,63 @@
+<div class="container">
+    <section class="form registration">
+        <h1 class="form__title">Registration</h1>
+        <form class="form__group" [formGroup]="registrationForm">
+            <div class="form__field-wrapper">
+                <label class="form__label" for="first-name">First Name</label>
+                <div class="form__field">
+                    <input class="form__input" id="first-name" appValidationIndicator formControlName="firstNameField">
+                    <ng-container *ngIf="(getFirstName?.dirty || getFirstName?.touched) && getFirstName?.invalid">
+                        <div class="form__error" *ngIf="getFirstName?.errors?.['required']">
+                            Please enter a first name
+                        </div>
+                        <div class="form__error" *ngIf="getFirstName?.errors?.['pattern']">
+                            You can enter only letters
+                        </div>
+                    </ng-container>
+                </div>
+            </div>
+            <div class="form__field-wrapper">
+                <label class="form__label" for="last-name">Last Name</label>
+                <div class="form__field">
+                    <input class="form__input" id="last-name" type="text" appValidationIndicator formControlName="lastNameField">
+                    <ng-container *ngIf="(getLastName?.dirty || getLastName?.touched) && getLastName?.invalid">
+                        <div class="form__error" *ngIf="getLastName?.errors?.['required']">
+                            Please enter a last name
+                        </div>
+                        <div class="form__error" *ngIf="getLastName?.errors?.['pattern']">
+                            You can enter only letters
+                        </div>
+                    </ng-container>
+                </div>
+            </div>
+            <div class="form__field-wrapper">
+                <label class="form__label" for="email">Email</label>
+                <div class="form__field">
+                    <input class="form__input" id="email" type="text" appValidationIndicator formControlName="email">
+                    <ng-container *ngIf="(getEmail?.dirty || getEmail?.touched) && getEmail?.invalid">
+                        <div class="form__error" *ngIf="getEmail?.errors?.['required']">
+                            Please enter a login email
+                        </div>
+                        <div class="form__error" *ngIf="getEmail?.errors?.['email']">
+                            The login email is invalid
+                        </div>
+                    </ng-container>
+                </div>
+            </div>
+            <div class="form__field-wrapper">
+                <label class="form__label" for="password">Password</label>
+                <div class="form__field">
+                    <input class="form__input" id="password" type="password" appValidationIndicator formControlName="password">
+                    <div class="form__error" *ngIf="(getPassword?.dirty || getPassword?.touched) &&
+                    getPassword?.invalid && getPassword?.errors?.errorStr">
+                        {{"Your password isn\'t strong enough. " + getPassword?.errors?.errorStr.message}}
+                    </div>
+                </div>
+            </div>
+            <div class="form__extra-wrapper">
+                <a routerLink="/" class="form__link">Login</a>
+                <button class="form__btn" [disabled]="!registrationForm.valid">Registration</button>
+            </div>
+        </form>
+    </section>
+</div>
